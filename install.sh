@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# basic shell script template stolen from:
+# https://github.com/rexim/dotfiles/blob/master/deploy.sh
+
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 for dotfile in $(find ${DOTFILES_DIR} -type f -name '\.*' -exec basename \{} \;); do
