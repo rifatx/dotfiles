@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(tsdh-dark))
- '(package-selected-packages '(magit omnisharp lsp-mode ##))
+ '(package-selected-packages '(multiple-cursors magit omnisharp lsp-mode ##))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -25,6 +25,9 @@
 (global-display-line-numbers-mode)
 (display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
+
+;; custom packages
+(require 'multiple-cursors)
 
 (global-set-key (kbd "<f11>") 'previous-buffer)
 (global-set-key (kbd "<f12>") 'next-buffer)
