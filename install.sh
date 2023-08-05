@@ -20,3 +20,7 @@ for dotfile in $(find ${DOTFILES_DIR} -type f -name '\.*' -exec basename \{} \;)
     echo "[WRN] ${src} already symlinked"
   fi
 done
+
+# custom files
+ln -s "${DOTFILES_DIR}/.config/libinput-gestures.conf" "${HOME}/.config/libinput-gestures.conf"
+
