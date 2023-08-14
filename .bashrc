@@ -23,3 +23,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+source .r-env
+
+alias btcon_r-buds='bluetoothctl connect ${MAC_R_BUDS}'
