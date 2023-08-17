@@ -9,7 +9,8 @@ export EDITOR=emacsclient
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias ec="emacsclient -c"
+alias ec='nohup emacsclient -c . 1>/dev/null 2>/dev/null &'
+
 PS1='[\u@\h \W]\$ '
 
 PATH="$PATH:/opt/android-platform-tools"
