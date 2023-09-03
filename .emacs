@@ -28,10 +28,22 @@
 
 ;; custom packages
 (require 'multiple-cursors)
+(require 'tabbar)
+
+(tabbar-mode 1)
+
+
+(defun single-tabbar-buffer-groups ()
+  (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+              ((eq major-mode 'dired-mode) "emacs")
+              (t "user"))))
+(setq tabbar-buffer-groups-function 'single-tabbar-buffer-groups)
 
 (global-set-key (kbd "<f11>") 'previous-buffer)
 (global-set-key (kbd "<f12>") 'next-buffer)
 
-
 (global-set-key (kbd "C-q") 'omnisharp-auto-complete)
+
+(global-set-key [(control shift iso-lefttab)] 'tabbar-backward-tab)
+(global-set-key [(control tab)]       'tabbar-forward-tab)
 
