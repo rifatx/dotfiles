@@ -29,6 +29,9 @@ call plug#end()
 " NerdTree
 map <F8> :NERDTreeToggle<CR>
 
+map <C-S-Up>   :m -2<CR>gv=gv
+map <C-S-Down> :m +1<CR>gv=gv
+
 " OmniSharp autocomplete dialog
 inoremap <expr> <Tab> pumvisible() ? '<C-n>' : getline('.')[col('.')-2] =~# '[[:alnum:].-_#$]' ? '<C-x><C-o>' : '<Tab>'
 nnoremap <C-o><C-u> :OmniSharpFindUsages<CR>
