@@ -2,6 +2,7 @@ syntax on
 color desert
 nnoremap <F11> :tabp<CR>
 nnoremap <F12> :tabn<CR>
+set number
 set relativenumber
 
 set tabstop=2
