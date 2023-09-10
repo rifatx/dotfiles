@@ -37,8 +37,9 @@ setxkbmap tr
 xrandr -s 1920x1080
 
 picom &
-dwmbar &
 xautolock -time 10 -locker slock &
+# dwmbar &
+dwmblocks &
 xbindkeys
 xset r rate 200 30
 libinput-gestures &
