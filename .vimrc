@@ -19,11 +19,13 @@ let g:OmniSharp_server_path = '/opt/dotnet/omnisharp-roslyn/OmniSharp'
 let g:OmniSharp_selector_ui = 'fzf'
 let g:OmniSharp_start_server = 1
 let g:OmniSharp_server_stdio = 1
+let g:clang_library_path='/usr/lib/libclang.so'
 
 call plug#begin('~/.vim/bundle')
 
 Plug 'scrooloose/nerdtree'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'xavierd/clang_complete'
 
 call plug#end()
 
