@@ -26,6 +26,9 @@ PATH="$PATH:/opt/dotnet/current"
 PATH="$PATH:/home/r/.dotnet/tools"
 export DOTNET_ROOT="/opt/dotnet/current"
 
+export JAVA_HOME="/usr/local/jvm/current"
+PATH="$PATH:/usr/local/jvm/current/bin"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ -f ~/.git-completion.bash ]; then
@@ -44,3 +47,5 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 if type "docker" > /dev/null; then
   source <(docker completion bash)
 fi
+
+export PATH
