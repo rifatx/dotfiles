@@ -9,7 +9,7 @@ export EDITOR=vim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source .r-env
+source /home/r/.r-env
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -64,5 +64,5 @@ COL_RES="\[\e[38;5;$(($?==0?46:160))m\]"
 
 PS0='\[${PS1:$((PS0time=\D{%s}, PS1calc=1, 0)):0}\]'
 PROMPT_COMMAND='PS1_GITCMD="$(b=$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2); [[ ${#b} -gt 0 ]] && echo -n "${b} ")"'
-PS1='\[\e[38;5;19m\]┌[\[\e[38;5;34m\]\[\e[38;5;228m\]\t \[\e[38;5;34m\]\u@\h \[\e[38;5;49m\]\w \[\e[38;5;166m\]${PS1_GITCMD}\[\e[38;5;$(($?==0?46:160))m\]($(((${PS1calc:-0}) ? \D{%s}-${PS0time:-0} : 0))s)\[\e[38;5;19m\]]\r\n└\[\e[38;5;34m\]\$ ${PS0:$((PS1calc=0, 0)):0}'
+PS1='\[\e[38;5;19m\]┌[\[\e[38;5;34m\]\[\e[38;5;228m\]\t \[\e[38;5;34m\]\u@\h \[\e[38;5;49m\]\w \[\e[38;5;166m\]${PS1_GITCMD}\[\e[38;5;$(($?==0?46:160))m\]($(((${PS1calc:-0}) ? \D{%s}-${PS0time:-0} : 0))s)\[\e[38;5;19m\]]\r\n└\[\e[38;5;$(($EUID==0?9:34))m\]\$ \[\e[38;5;34m\]${PS0:$((PS1calc=0, 0)):0}'
 
