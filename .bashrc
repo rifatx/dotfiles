@@ -29,6 +29,8 @@ export DOTNET_ROOT="/opt/dotnet/current"
 export JAVA_HOME="/usr/local/jvm/current"
 PATH="$PATH:/usr/local/jvm/current/bin"
 
+PATH="$PATH:/mnt/data/jetbrains/scripts"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ -f ~/.git-completion.bash ]; then
@@ -49,3 +51,18 @@ if type "docker" > /dev/null; then
 fi
 
 export PATH
+
+BLUE="\[\e[38;5;19m\]"
+D_GREEN="\[\e[38;5;34m\]"
+L_GREEN="\[\e[38;5;49m\]"
+ORANGE="\[\e[38;5;166m\]"
+L_YELLOW="\[\e[38;5;228m\]"
+ERR_RED="\[\e[38;5;160m\]"
+OK_GREEN="\[\e[38;5;46m\]"
+COL_RES="\[\e[38;5;$(($?==0?46:160))m\]"
+
+
+PS0='\[${PS1:$((PS0time=\D{%s}, PS1calc=1, 0)):0}\]'
+PROMPT_COMMAND='PS1_GITCMD="$(b=$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2); [[ ${#b} -gt 0 ]] && echo -n "${b} ")"'
+PS1='\[\e[38;5;19m\]┌[\[\e[38;5;34m\]\[\e[38;5;228m\]\t \[\e[38;5;34m\]\u@\h \[\e[38;5;49m\]\w \[\e[38;5;166m\]${PS1_GITCMD}\[\e[38;5;$(($?==0?46:160))m\]($((($PS1calc) ? \D{%s}-${PS0time:-0} : 0))s)\[\e[38;5;19m\]]\r\n└\[\e[38;5;34m\]\$ ${PS0:$((PS1calc=0, 0)):0}'
+
