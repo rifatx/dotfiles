@@ -54,7 +54,7 @@ export PATH
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-#BLUE="\[\e[38;5;247m\]"
+#BLUE="\[\e[38;5;25m\]"
 #D_GREEN="\[\e[38;5;34m\]"
 #L_GREEN="\[\e[38;5;49m\]"
 #ORANGE="\[\e[38;5;166m\]"
@@ -64,9 +64,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #COL_RES="\[\e[38;5;$(($?==0?46:160))m\]"
 
 
-PS0='\[${PS1:$((PS0time=\D{%s}, PS1calc=1, 0)):0}\]'
+PS0='${PS1:$((PS0time=\D{%s}, PS1calc=1, 0)):0}'
 
 PROMPT_COMMAND='PS1_GITCMD="$(b=$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2); [[ ${#b} -gt 0 ]] && echo -n "${b} ")";PS1_VENVCMD="$(v=${VIRTUAL_ENV##*/}; [[ ${#v} -gt 0 ]] && echo -n "(${v}) ")"'
 
-PS1='\[\e[38;5;247m\]┌[\[\e[38;5;34m\]\[\e[38;5;228m\]\t \[\e[38;5;34m\]\u@\h \[\e[38;5;49m\]\w \[\e[38;5;166m\]${PS1_GITCMD}\[\e[38;5;33m\]${PS1_VENVCMD}\[\e[38;5;$(($?==0?46:160))m\]($(((${PS1calc:-0}) ? \D{%s}-${PS0time:-0} : 0))s)\[\e[38;5;247m\]]\r\n\[\e[38;5;247m\]└\[\e[38;5;$(($EUID==0?9:34))m\]\$ \[\e[38;5;34m\]${PS0:$((PS1calc=0, 0)):0}'
+PS1='\[\e[38;5;25m\]┌[\[\e[38;5;34m\]\[\e[38;5;228m\]\t \[\e[38;5;34m\]\u@\h \[\e[38;5;49m\]\w \[\e[38;5;166m\]${PS1_GITCMD}\[\e[38;5;33m\]${PS1_VENVCMD}\[\e[38;5;$(($?==0?46:160))m\]($(((${PS1calc:-0}) ? \D{%s}-${PS0time:-0} : 0))s)\[\e[38;5;25m\]]\r\n\[\e[38;5;25m\]└\[\e[38;5;$(($EUID==0?9:34))m\]\$ \[\e[38;5;34m\]${PS0:$((PS1calc=0, 0)):0}'
 
