@@ -26,6 +26,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'xavierd/clang_complete'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
