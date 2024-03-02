@@ -17,7 +17,7 @@ alias ec='nohup emacsclient -c . 1>/dev/null 2>/dev/null &'
 
 alias vm_start='vmrun -T ws start ${VM_VMX_PATH} nogui'
 alias vm_stop='vmrun -T ws stop ${VM_VMX_PATH} nogui'
-alias vm_rdp="nohup echo 'yes' | rdesktop -k tr -u r -p $VM_PASSWORD $(vmrun getGuestIPAddress ${VM_VMX_PATH} -wait) 1>/dev/null 2>/dev/null &"
+alias vm_rdp="(echo 'yes' | nohup rdesktop -k tr -u r -p $VM_PASSWORD $(vmrun getGuestIPAddress ${VM_VMX_PATH} -wait) 1>/dev/null 2>/dev/null) &"
 
 PS1='[\u@\h \W]\$ '
 
