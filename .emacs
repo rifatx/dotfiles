@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(tsdh-dark))
- '(package-selected-packages '(multiple-cursors magit omnisharp lsp-mode ##))
+ '(package-selected-packages '(evil multiple-cursors magit omnisharp lsp-mode ##))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -26,12 +26,22 @@
 (display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
+(setq-default tab-width 2)
+
+;; c-mode settings
+(setq c-default-style "linux"
+      c-basic-offset 2
+			indent-tabs-mode nil)
+
+
 ;; custom packages
 (require 'multiple-cursors)
 (require 'tabbar)
+(require 'evil)
+(require 'magit)
 
 (tabbar-mode 1)
-
+(global-auto-complete-mode t)
 
 (defun single-tabbar-buffer-groups ()
   (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
@@ -42,8 +52,13 @@
 (global-set-key (kbd "<f11>") 'previous-buffer)
 (global-set-key (kbd "<f12>") 'next-buffer)
 
+(global-set-key (kbd "<f12>") 'next-buffer)
+
+(keymap-global-set "C-c C-x" 'kill-region)
+(keymap-global-set "C-c C-c" 'kill-ring-save)
+(keymap-global-set "C-c C-v" 'yank)
+
 (global-set-key (kbd "C-q") 'omnisharp-auto-complete)
 
 (global-set-key [(control shift iso-lefttab)] 'tabbar-backward-tab)
 (global-set-key [(control tab)]       'tabbar-forward-tab)
-
