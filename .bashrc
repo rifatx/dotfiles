@@ -13,7 +13,7 @@ source /home/r/.r-env
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias ec='nohup emacsclient -c . 1>/dev/null 2>/dev/null &'
+#alias ec='nohup emacsclient -c . 1>/dev/null 2>/dev/null &'
 
 function f_vm_rdp() {
   if [ -z "${VM_PASSWORD}" ]; then
