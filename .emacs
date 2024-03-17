@@ -60,6 +60,7 @@
 (keymap-global-set "C-c C-x" 'kill-region)
 (keymap-global-set "C-c C-c" 'kill-ring-save)
 (keymap-global-set "C-c C-v" 'yank)
+(keymap-global-set "C-x C-," 'kill-this-buffer)
 
 (global-set-key (kbd "C-q") 'omnisharp-auto-complete)
 
