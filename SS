@@ -3,10 +3,11 @@
 #set -xe
 
 d="${HOME}/Documents/screenshots"
+ff="ss-"
 
 mkdir -p "${d}"
 
-n=$(ls -l "${d}" | wc -l)
+n=$(find "${d}" -name "${ff}*" | wc -l)
 n=$(printf "%05d" ${n})
 
-ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -vframes 1 "${d}/ss-${n}.png"
+ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -vframes 1 "${d}/${ff}${n}.png"
