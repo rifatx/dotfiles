@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#set -xe
+
+d="${HOME}/Documents/screenshots"
+
+mkdir -p "${d}"
+
+n=$(ls -l "${d}" | wc -l)
+n=$(printf "%05d" ${n})
+
+ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -vframes 1 "${d}/ss-${n}.png"
