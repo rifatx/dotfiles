@@ -52,20 +52,31 @@
               (t "user"))))
 (setq tabbar-buffer-groups-function 'single-tabbar-buffer-groups)
 
+;; buffer keybindings
 (global-set-key (kbd "<f11>") 'previous-buffer)
 (global-set-key (kbd "<f12>") 'next-buffer)
 
-(global-set-key (kbd "<f12>") 'next-buffer)
-
+;; c/p keybindings
 (keymap-global-set "C-c C-x" 'kill-region)
 (keymap-global-set "C-c C-c" 'kill-ring-save)
 (keymap-global-set "C-c C-v" 'yank)
+
+;; buffer keybindings
+(define-prefix-command 'a-map)
+(global-set-key (kbd "C-a") 'a-map)
+(define-key a-map (kbd "x") 'kill-this-buffer)
 (keymap-global-set "C-x C-," 'kill-this-buffer)
 
+;; dotnet keybindings
 (global-set-key (kbd "C-q") 'omnisharp-auto-complete)
 
-(global-set-key (kbd "C-,") 'other-window)
-(global-set-key (kbd "C-.") 'delete-window)
-
+;; tab shortcust
 (global-set-key [(control shift iso-lefttab)] 'tabbar-backward-tab)
 (global-set-key [(control tab)]       'tabbar-forward-tab)
+
+;; window keybindings
+(define-prefix-command 'dot-map)
+(global-set-key (kbd "C-i") 'dot-map)
+(define-key dot-map (kbd ",") 'other-window)
+(define-key dot-map (kbd ".") 'delete-window)
+
