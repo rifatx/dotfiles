@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#set -xe
+
+d="${HOME}/Documents/screenrecordings"
+ff="sr-"
+
+mkdir -p "${d}"
+
+n=$(find "${d}" -name "${ff}*" | wc -l)
+n=$(printf "%05d" ${n})
+
+ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -c:v libx264 -preset ultrafast "${d}/${ff}${n}.mp4"
+
