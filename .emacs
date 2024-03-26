@@ -16,6 +16,7 @@
  '(tabbar-selected ((t (:inherit tabbar-default :foreground "green"))))
  '(variable-pitch ((t (:family "Serif")))))
 
+(setq font-lock-auto-fontify t)
 (setq omnisharp-server-executable-path "/opt/dotnet/omnisharp-roslyn/OmniSharp")
 
 (require 'package)
