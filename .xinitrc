@@ -43,5 +43,7 @@ dwmblocks &
 xbindkeys
 xset r rate 200 30
 libinput-gestures &
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface gtk-theme prefer-dark
 exec dwm
 
