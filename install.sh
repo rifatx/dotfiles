@@ -5,7 +5,7 @@
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-for dotfile in $(find ${DOTFILES_DIR} -type f -name '\.*' -exec basename \{} \;); do
+for dotfile in $(find ${DOTFILES_DIR} -type f -name '\.*' -not -name '\.gitignore' -exec basename \{} \;); do
   src="${DOTFILES_DIR}/${dotfile}"
   dest="${HOME}/${dotfile}"
 
