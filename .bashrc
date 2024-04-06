@@ -54,7 +54,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 PS0='${PS1:$((PS0time=\D{%s}, PS1calc=1, 0)):0}'
 
-PROMPT_COMMAND='PS1_GITCMD="$(b=$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2); [[ ${#b} -gt 0 ]] && gu=$(git ls-files --others --exclude-standard | wc -l) && gm=$(git --no-pager diff --name-only --diff-filter=M | wc -l) && gs=$(git diff --cached --numstat | wc -l) && gd=$(git --no-pager diff --name-only --diff-filter=D | wc -l) && echo -n "${b}/${gu}/${gm}/${gs}/${gd} ")";PS1_VENVCMD="$(v=${VIRTUAL_ENV##*/}; [[ ${#v} -gt 0 ]] && echo -n "(${v}) ")"'
+PROMPT_COMMAND='PS1_GITCMD="$(b=$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2); [[ ${#b} -gt 0 ]] && gu=$(git ls-files --others --exclude-standard | wc -l) && gm=$(git --no-pager diff --name-only --diff-filter=M | wc -l) && gs=$(git diff --cached --numstat | wc -l) && gd=$(git --no-pager diff --name-only --diff-filter=D | wc -l) && echo -n -e "${b}\e[38;5;11m?${gu}\e[38;5;253m~${gm}\e[38;5;10m+${gs}\e[38;5;9m-${gd} ")";PS1_VENVCMD="$(v=${VIRTUAL_ENV##*/}; [[ ${#v} -gt 0 ]] && echo -n "(${v}) ")"'
 
 PS1='\[\e[38;5;25m\]┌[\[\e[38;5;34m\]\[\e[38;5;228m\]\t \[\e[38;5;34m\]\u@\h \[\e[38;5;49m\]\w \[\e[38;5;166m\]${PS1_GITCMD}\[\e[38;5;33m\]${PS1_VENVCMD}\[\e[38;5;$(($?==0?46:160))m\]($(((${PS1calc:-0}) ? \D{%s}-${PS0time:-0} : 0))s$(r=$? && [[ ${r} -ne 0 ]] && echo -n "|${r}"))\[\e[38;5;25m\]]\r\n\[\e[38;5;25m\]└\[\e[38;5;$(($EUID==0?9:34))m\]\$ \[\e[38;5;34m\]${PS0:$((PS1calc=0, 0)):0}'
 
