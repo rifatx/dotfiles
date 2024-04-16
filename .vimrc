@@ -8,6 +8,7 @@ set relativenumber
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set cursorline
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
