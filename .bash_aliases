@@ -32,6 +32,9 @@ alias vm_start='vmrun -T ws start ${VM_VMX_PATH} nogui'
 alias vm_stop='vmrun -T ws stop ${VM_VMX_PATH} nogui'
 alias vm_rdp='f_vm_rdp'
 
+alias vb_rdp='(echo 'Y' | nohup xfreerdp /bpp:32 /gfx +aero +fonts +gestures -grab-keyboard -grab-mouse /d:${VB_DOMAIN} /u:${VB_USER} /p:${VB_PASSWORD} /h:1060 /w:1920 /v:${VB_HOSTNAME} 1>/dev/null 2>/dev/null) &'
+
+
 alias btcon_r-buds='bluetoothctl connect ${MAC_R_BUDS}'
 
 export HISTFILESIZE=
