@@ -39,6 +39,10 @@ if type "docker" > /dev/null; then
   source <(docker completion bash)
 fi
 
+if [ -f ~/.ssh_completion ]; then
+  source ./.ssh_completion
+fi
+
 export PATH
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
