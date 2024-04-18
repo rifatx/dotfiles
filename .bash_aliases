@@ -25,11 +25,11 @@ function f_vm_rdp() {
     return 1
   fi
 
-  (echo 'yes' | nohup rdesktop -K -k tr -u r -p "${VM_PASSWORD}" $(vmrun getGuestIPAddress "${VM_VMX_PATH}" -wait) 1>/dev/null 2>/dev/null) &
+  (echo 'yes' | nohup rdesktop -K -k tr -a 8 -u "${VM_USERNAME}" -p "${VM_PASSWORD}" $(vmrun -vp ${VM_ENCRYPTION_PASSWORD} getGuestIPAddress "${VM_VMX_PATH}" -wait) 1>/dev/null 2>/dev/null) &
 }
 
-alias vm_start='vmrun -T ws start ${VM_VMX_PATH} nogui'
-alias vm_stop='vmrun -T ws stop ${VM_VMX_PATH} nogui'
+alias vm_start='vmrun -T ws -vp ${VM_ENCRYPTION_PASSWORD} start ${VM_VMX_PATH} nogui'
+alias vm_stop='vmrun -T ws -vp ${VM_ENCRYPTION_PASSWORD} stop ${VM_VMX_PATH} nogui'
 alias vm_rdp='f_vm_rdp'
 
 alias vb_rdp='(echo 'Y' | nohup xfreerdp /bpp:32 /gfx +aero +fonts +gestures -grab-keyboard -grab-mouse /d:${VB_DOMAIN} /u:${VB_USER} /p:${VB_PASSWORD} /h:1060 /w:1920 /v:${VB_HOSTNAME} 1>/dev/null 2>/dev/null) &'
