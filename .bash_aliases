@@ -25,7 +25,7 @@ function f_vm_rdp() {
     return 1
   fi
 
-  (echo 'yes' | nohup rdesktop -K -k tr -a 8 -u "${VM_USERNAME}" -p "${VM_PASSWORD}" $(vmrun -vp ${VM_ENCRYPTION_PASSWORD} getGuestIPAddress "${VM_VMX_PATH}" -wait) 1>/dev/null 2>/dev/null) &
+  (echo 'yes' | nohup rdesktop -K -k tr -a 8 -x m -u "${VM_USERNAME}" -p "${VM_PASSWORD}" $(vmrun -vp ${VM_ENCRYPTION_PASSWORD} getGuestIPAddress "${VM_VMX_PATH}" -wait) 1>/dev/null 2>/dev/null) &
 }
 
 alias vm_start='vmrun -T ws -vp ${VM_ENCRYPTION_PASSWORD} start ${VM_VMX_PATH} nogui'
