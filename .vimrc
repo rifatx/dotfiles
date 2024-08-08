@@ -1,7 +1,5 @@
 syntax on
 color desert
-nnoremap <F11> :tabp<CR>
-nnoremap <F12> :tabn<CR>
 set number
 set relativenumber
 
@@ -27,6 +25,7 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'terryma/vim-multiple-cursors'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -34,11 +33,27 @@ call plug#end()
 " NerdTree
 map <F8> :NERDTreeToggle<CR>
 
+" swap lines
 map <C-S-Up>   :m -2<CR>gv=gv
 map <C-S-Down> :m +1<CR>gv=gv
 
+" coc
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" multiple cursors
+let g:multi_cursor_start_word_key      = '<C-d>'
+let g:multi_cursor_select_all_word_key = '<A-d>'
+let g:multi_cursor_start_key           = 'g<C-d>'
+let g:multi_cursor_select_all_key      = 'g<A-d>'
+let g:multi_cursor_next_key            = '<C-d>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 nmap <silent> <C-N> :cn<CR>zv
 nmap <silent> <C-P> :cp<CR>zv
+
+" tab nav keys
+nnoremap <F11> :tabp<CR>
+nnoremap <F12> :tabn<CR>
 
