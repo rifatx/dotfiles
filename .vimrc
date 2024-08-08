@@ -39,6 +39,11 @@ map <C-S-Down> :m +1<CR>gv=gv
 
 " coc
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " multiple cursors
 let g:multi_cursor_start_word_key      = '<C-d>'
