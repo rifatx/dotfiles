@@ -17,14 +17,14 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'scrooloose/nerdtree'
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 Plug 'xavierd/clang_complete'
 Plug 'tpope/vim-fugitive'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
