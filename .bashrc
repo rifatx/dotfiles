@@ -9,7 +9,9 @@ export EDITOR=vim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source ./.r-env
+if [ -f ./.r-env ]; then
+    source ./.r-env
+fi
 
 if [ -f ./.bash_aliases ]; then
     source ./.bash_aliases
