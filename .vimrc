@@ -22,7 +22,7 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'scrooloose/nerdtree'
 " Plug 'OmniSharp/omnisharp-vim'
-Plug 'xavierd/clang_complete'
+" Plug 'xavierd/clang_complete'
 Plug 'tpope/vim-fugitive'
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
