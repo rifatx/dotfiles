@@ -2,4 +2,5 @@
 
 #set -xe
 
-tor_restart
+sudo /usr/bin/systemctl restart tor.service
+

@@ -2,4 +2,5 @@
 
 #set -xe
 
-tor_start
+sudo /usr/bin/systemctl start tor.service
+

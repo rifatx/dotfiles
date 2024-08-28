@@ -2,4 +2,5 @@
 
 #set -xe
 
-tor_stop
+sudo /usr/bin/systemctl stop tor.service
+

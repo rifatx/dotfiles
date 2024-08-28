@@ -35,13 +35,10 @@ alias vm_rdp='f_vm_rdp'
 
 alias vb_rdp='(echo 'Y' | nohup xfreerdp /bpp:16 /gfx +aero +fonts +gestures -grab-keyboard -grab-mouse /d:${VB_DOMAIN} /u:${VB_USER} /p:${VB_PASSWORD} /h:1060 /w:1920 /v:${VB_HOSTNAME} 1>/dev/null 2>/dev/null) &'
 
-alias tor_start='sudo /usr/bin/systemctl start tor.service'
-alias tor_stop='sudo /usr/bin/systemctl stop tor.service'
-alias tor_restart='sudo /usr/bin/systemctl restart tor.service'
-
 alias btcon_r-buds='bluetoothctl connect ${MAC_R_BUDS}'
 
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
+
