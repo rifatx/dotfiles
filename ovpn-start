@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#set -xe
+
+sudo /usr/bin/systemctl start openvpn-client@oci-vpn-client
+
+res="";
+
+while [[ -z "${res}" ]];
+do
+  sleep 1;
+  res=$(ip addr show dev tun0 2>&1 | grep 'inet ');
+done;
+
+ip=$(echo "${res}" | awk '{$1=$1};1' | cut -d ' ' -f 2 | cut -d '/' -f 1)
+table=8
+
+sudo ip route add 10.8.0.0/24 dev tun0 src ${ip} table ${table}
+sudo ip route add default via 10.8.0.1 dev tun0 table ${table}
+sudo ip rule add from ${ip}/32 table ${table}
+sudo ip rule add to ${ip}/32 table ${table}
+
+sed "s/__BIND_ADDR__/${ip}/g" $HOME/dotfiles/.tinyproxy/_tinyproxy_templ.conf > $HOME/dotfiles/.tinyproxy/tinyproxy.conf
+
+sudo /usr/bin/systemctl restart tinyproxy
+
