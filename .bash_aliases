@@ -4,7 +4,7 @@
 
 alias md='mkdir'
 alias ls='ls --color=auto'
-alias ll='ls -lah'
+alias ll='ls -lath'
 alias grep='grep --color=auto'
 #alias ec='nohup emacsclient -c . 1>/dev/null 2>/dev/null &'
 
