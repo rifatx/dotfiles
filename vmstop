@@ -1,0 +1,3 @@
+#!/bin/bash
+
+vmrun -T ws -vp ${VM_ENCRYPTION_PASSWORD} stop ${VM_VMX_PATH} nogui
