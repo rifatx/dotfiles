@@ -66,3 +66,8 @@ nmap <silent> <C-P> :cp<CR>zv
 nnoremap <F11> :tabp<CR>
 nnoremap <F12> :tabn<CR>
 
+let vimrc_path = trim(system('dirname -z $(realpath ~/.vimrc)'))
+execute 'source ' . vimrc_path . "/.vimrc_tagtab"
+
+map <C-g> :TabExpand 1<CR>
+
