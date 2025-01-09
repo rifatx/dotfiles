@@ -49,6 +49,10 @@ if [ -f "${CD}/.ssh_completion" ]; then
   source "${CD}/.ssh_completion"
 fi
 
+if [ -f "${CD}/lscolors.sh" ]; then
+  source "${CD}/lscolors.sh"
+fi
+
 export PATH
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
