@@ -9,12 +9,16 @@ export EDITOR=vim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ -f ./.r-env ]; then
-    source ./.r-env
+CD="$(dirname $(realpath ~/.bashrc))"
+
+export CD
+
+if [ -f "~/.r-env" ]; then
+    source "~/.r-env"
 fi
 
-if [ -f ./.bash_aliases ]; then
-    source ./.bash_aliases
+if [ -f "${CD}/.bash_aliases" ]; then
+    source "${CD}/.bash_aliases"
 fi
 
 PS1='[\u@\h \W]\$ '
@@ -32,7 +36,7 @@ PATH="$PATH:/mnt/data/jetbrains/scripts"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+  source ~/.git-completion.bash
 fi
 
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
@@ -41,8 +45,8 @@ if type "docker" > /dev/null; then
   source <(docker completion bash)
 fi
 
-if [ -f ~/.ssh_completion ]; then
-  source ./.ssh_completion
+if [ -f "${CD}/.ssh_completion" ]; then
+  source "${CD}/.ssh_completion"
 fi
 
 export PATH
