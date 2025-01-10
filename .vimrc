@@ -34,6 +34,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
+Plug 'c0r73x/vimdir.vim'
 
 call plug#end()
 
