@@ -81,3 +81,6 @@ fi
 export PATH=/home/r/bin:$PATH
 
 [[ -e "/home/r/Programs/oci-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/r/Programs/oci-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
+
+export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
+
