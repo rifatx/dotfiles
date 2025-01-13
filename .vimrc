@@ -35,6 +35,8 @@ Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'c0r73x/vimdir.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim',
 
 call plug#end()
 
@@ -73,5 +75,14 @@ nnoremap <F12> :tabn<CR>
 let vimrc_path = trim(system('dirname -z $(realpath ~/.vimrc)'))
 execute 'source ' . vimrc_path . "/.vimrc_tagtab"
 
+" open tag reference in new tab, if not already opened
 map <C-g> :TabExpand 1<CR>
+
+" fzf mappings
+nmap <leader>x :Explore<CR>
+nmap <leader>n :Files<CR>
+nmap <leader>f :Rg<CR>
+
+" open fzf search result in new tab
+let g:fzf_action = { 'enter': 'tab split' }
 
