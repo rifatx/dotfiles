@@ -2,19 +2,19 @@
 # ~/.bashrc
 #
 
-cd ~ 
+cd ${HOME} 
 
 export EDITOR=vim
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-CD="$(dirname $(realpath ~/.bashrc))"
+CD="$(dirname $(realpath ${HOME}/.bashrc))"
 
 export CD
 
-if [ -f "~/.r-env" ]; then
-    source "~/.r-env"
+if [ -f "${HOME}/.r-env" ]; then
+    source "${HOME}/.r-env"
 fi
 
 if [ -f "${CD}/.bash_aliases" ]; then
@@ -33,10 +33,10 @@ PATH="$PATH:/usr/local/jvm/current/bin"
 
 PATH="$PATH:/mnt/data/jetbrains/scripts"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ${HOME}/.fzf.bash ] && source ${HOME}/.fzf.bash
 
-if [ -f ~/.git-completion.bash ]; then
-  source ~/.git-completion.bash
+if [ -f ${HOME}/.git-completion.bash ]; then
+  source ${HOME}/.git-completion.bash
 fi
 
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
