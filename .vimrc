@@ -37,6 +37,7 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'c0r73x/vimdir.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim',
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
