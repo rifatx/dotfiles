@@ -79,6 +79,7 @@ fi
 
 
 export PATH=/home/r/bin:$PATH
+export PATH=/home/r/tools/dextools:$PATH
 
 [[ -e "/home/r/Programs/oci-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/r/Programs/oci-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
