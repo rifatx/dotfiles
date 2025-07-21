@@ -15,9 +15,9 @@
    XF86AudioMicMute
 
 # Increase screen brightness
-"xbacklight -inc 5"
+"brightnessctl s +5%"
    XF86MonBrightnessUp
 
 # Decrease screen brightness
-"xbacklight -dec 5"
+"brightnessctl s 5%-"
    XF86MonBrightnessDown
