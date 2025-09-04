@@ -1,4 +1,5 @@
 syntax on
+
 color desert
 set number
 set relativenumber
@@ -13,8 +14,10 @@ highlight CursorLine ctermbg=234
 set history=10000
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -38,6 +41,7 @@ Plug 'c0r73x/vimdir.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim',
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'madox2/vim-ai'
 
 call plug#end()
 
@@ -87,4 +91,26 @@ nmap <leader>f :Rg<CR>
 
 " open fzf search result in new tab
 let g:fzf_action = { 'enter': 'tab split' }
+
+" vim-ai
+let s:openrouter_model_name = 'qwen/qwen3-coder:free'
+let s:openrouter_api_address = 'https://openrouter.ai/api/v1/chat/completions'
+
+function! g:GetOpenrouterToken()
+    return $OPENROUTER_TOKEN
+endfunction
+
+let vim_ai_common_settings = {
+\  "provider": "openai",
+\  "options": {
+\    "model": s:openrouter_model_name,
+\    "endpoint_url": s:openrouter_api_address,
+\    "stream": 1,
+\    "auth_type": "bearer",
+\    "token_load_fn": "g:GetOpenrouterToken()",
+\  }
+\}
+
+let g:vim_ai_complete = vim_ai_common_settings
+let g:vim_ai_chat = vim_ai_common_settings 
 
