@@ -40,7 +40,7 @@ setxkbmap tr
 # xrandr -s 1920x1080
 
 # dual monitor - hd monitor right of main display
-xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --right-of eDP-1
+xrandr --output eDP-1 --mode 1920x1080 --output DP-1 --mode 1920x1080 --right-of eDP-1
 
 picom &
 xautolock -time 10 -locker slock &
