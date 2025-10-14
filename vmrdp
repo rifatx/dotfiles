@@ -1,24 +1,17 @@
 #!/bin/bash
 
 function f_vm_rdp() {
+  if [ -z "${VM_USERNAME}" ]; then
+    echo 'VM password (VM_USERNAME) not set'
+    return 1
+  fi
+
   if [ -z "${VM_PASSWORD}" ]; then
     echo 'VM password (VM_PASSWORD) not set'
     return 1
   fi
 
-  if [ -z "${VM_VMX_PATH}" ]; then
-    echo 'VM path (VM_VMX_PATH) not set'
-    return 1
-  fi
-
-  nVM=$(vmrun list 2>/dev/null | grep "$VM_VMX_PATH" | wc -l)
-
-  if [ ${nVM} == 0 ]; then
-    echo "VM '${VM_VMX_PATH}' not running"
-    return 1
-  fi
-
-  (echo 'yes' | nohup rdesktop -K -k tr -a 8 -x m -u "${VM_USERNAME}" -p "${VM_PASSWORD}" $(vmrun -vp ${VM_ENCRYPTION_PASSWORD} getGuestIPAddress "${VM_VMX_PATH}" -wait 2>/dev/null) 1>/dev/null 2>/dev/null) &
+  (echo 'yes' | nohup rdesktop -K -k tr -a 8 -x m -u "${VM_USERNAME}" -p "${VM_PASSWORD}" localhost:5555 1>/dev/null 2>/dev/null) &
 }
 
 f_vm_rdp

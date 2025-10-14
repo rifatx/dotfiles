@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vmrun -T ws -vp ${VM_ENCRYPTION_PASSWORD} start ${VM_VMX_PATH} nogui 2>/dev/null
+
