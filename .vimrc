@@ -44,6 +44,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim',
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'madox2/vim-ai'
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
