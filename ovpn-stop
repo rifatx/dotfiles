@@ -2,6 +2,6 @@
 
 #set -xe
 
-sudo /usr/bin/systemctl stop tinyproxy
-sudo /usr/bin/systemctl stop openvpn-client@oci-vpn-client
+/usr/bin/systemctl stop tinyproxy
+/usr/bin/systemctl stop openvpn-client@oci-vpn-client
 
