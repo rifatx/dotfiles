@@ -25,6 +25,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'iggredible/vim-mcp'
 Plug 'scrooloose/nerdtree'
 " Plug 'OmniSharp/omnisharp-vim'
 " Plug 'xavierd/clang_complete'
