@@ -47,8 +47,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'madox2/vim-ai'
 Plug 'puremourning/vimspector'
 Plug 'stevearc/vim-arduino'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/bufexplorer.zip'
+
 
 call plug#end()
+
+let mapleader = ','
 
 " NerdTree
 map <F8> :NERDTreeToggle<CR>
@@ -96,6 +101,11 @@ nmap <leader>f :Rg<CR>
 
 " open fzf search result in new tab
 let g:fzf_action = { 'enter': 'tab split' }
+
+" CtrlP mapings
+let g:ctrlp_map = '<C-f>'
+map <leader>b :CtrlPBuffer<cr>
+map <leader>h :CtrlPMRUFiles<cr>
 
 " vim-ai
 let s:openrouter_model_name = 'qwen/qwen3-coder:free'
