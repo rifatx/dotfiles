@@ -55,8 +55,10 @@ let mapleader = ','
 map <F8> :NERDTreeToggle<CR>
 
 " swap lines
-map <C-S-Up>   :m -2<CR>gv=gv
-map <C-S-Down> :m +1<CR>gv=gv
+nnoremap <silent> <leader>mj :<C-U>execute 'move +' . v:count1<CR>
+nnoremap <silent> <leader>mk :<C-U>execute 'move -' . (v:count1+1)<CR>
+vnoremap <silent> <leader>mj :move '>+1<CR>gv=gv
+vnoremap <silent> <leader>mk :move '<-2<CR>gv=gv
 
 " coc
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
