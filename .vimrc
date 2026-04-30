@@ -1,6 +1,5 @@
 syntax on
 
-color desert
 set number
 set relativenumber
 
@@ -45,9 +44,12 @@ Plug 'puremourning/vimspector'
 Plug 'stevearc/vim-arduino'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/bufexplorer.zip'
-
+Plug 'menisadi/kanagawa.vim'
 
 call plug#end()
+
+" colorscheme desert
+colorscheme kanagawa
 
 let mapleader = ','
 
