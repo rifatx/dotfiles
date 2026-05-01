@@ -98,6 +98,7 @@ map <C-g> :TabExpand 1<CR>
 nmap <leader>x :Explore<CR>
 nmap <leader>n :Files<CR>
 nmap <leader>f :Rg<CR>
+nmap <leader>hc :History:<CR>
 
 " open fzf search result in new tab
 let g:fzf_action = { 'enter': 'tab split' }
