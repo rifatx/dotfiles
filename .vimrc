@@ -97,7 +97,6 @@ map <C-g> :TabExpand 1<CR>
 " fzf mappings
 nmap <leader>x :Explore<CR>
 nmap <leader>n :Files<CR>
-nmap <leader>f :Rg<CR>
 nmap <leader>fc :History:<CR>
 nmap <leader>fs :History/<CR>
 
