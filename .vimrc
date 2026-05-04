@@ -45,6 +45,8 @@ Plug 'stevearc/vim-arduino'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'menisadi/kanagawa.vim'
+Plug 'rochacbruno/vim-rest-console'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -130,3 +132,17 @@ let vim_ai_common_settings = {
 let g:vim_ai_complete = vim_ai_common_settings
 let g:vim_ai_chat = vim_ai_common_settings 
 
+" vim-rest-console
+let g:vrc_curl_opts = {
+  \ '--connect-timeout' : 10,
+  \ '-L': '',
+  \ '-k': '',
+  \ '-s': '',
+\}
+let g:vrc_auto_format_resource_patterns = {
+  \'json': 'jq' 
+\}
+
+
+"ultisnips
+let g:UltiSnipsSnippetDirectories = ['~/dotfiles/vim-snips']

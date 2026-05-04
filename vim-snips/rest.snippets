@@ -1,0 +1,25 @@
+snippet get "GET request"
+http://$1
+--
+Content-Type: application/json
+
+--
+
+--
+GET /$2
+$0
+endsnippet
+
+snippet post "POST request"
+http://$1
+--
+Content-Type: application/json
+
+--
+
+--
+POST /$2
+
+{}
+$0
+endsnippet
