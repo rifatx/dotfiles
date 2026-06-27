@@ -23,6 +23,8 @@ fi
 
 PS1='[\u@\h \W]\$ '
 
+eval "$(fzf --bash)"
+
 PATH="$PATH:/opt/android-platform-tools"
 PATH="$PATH:/opt/dotnet/current"
 PATH="$PATH:/home/r/.dotnet/tools"
@@ -32,8 +34,6 @@ export JAVA_HOME="/usr/local/jvm/current"
 PATH="$PATH:/usr/local/jvm/current/bin"
 
 PATH="$PATH:/mnt/data/jetbrains/scripts"
-
-[ -f ${HOME}/.fzf.bash ] && source ${HOME}/.fzf.bash
 
 if [ -f ${HOME}/.git-completion.bash ]; then
   source ${HOME}/.git-completion.bash
