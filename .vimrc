@@ -1,5 +1,7 @@
 syntax on
 
+set autochdir
+
 set number
 set relativenumber
 
@@ -71,6 +73,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gb <C-o>
+nmap <silent> gn <C-i>
 
 " multiple cursors
 let g:multi_cursor_use_default_mapping = 0
